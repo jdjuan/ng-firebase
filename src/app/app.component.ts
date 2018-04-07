@@ -13,7 +13,20 @@ export class AppComponent {
     this.users$ = db.collection('users').valueChanges();
   }
 
-  addUser(name: string) {
-    this.db.collection('users').add({ name });
+  addUser(target: HTMLInputElement) {
+    const name = target.value;
+    target.value = null;
+    const id = this.db.createId();
+    this.db
+      .collection('users')
+      .doc(id)
+      .set({ id, name });
+  }
+
+  editUser(name: string, id: string) {
+    this.db
+      .collection('users')
+      .doc(id)
+      .update({ name });
   }
 }

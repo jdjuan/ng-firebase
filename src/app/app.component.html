@@ -1,4 +1,8 @@
-<pre>{{users$ | async | json}}</pre>
-
-<input (keydown.enter)="addUser($event.target.value)"
+<div *ngFor="let user of (users$ | async)">
+    <input type="text"
+           [value]="user.name"
+           (keydown.enter)="editUser($event.target.value, user.id)">
+</div>
+<br>
+<input (keydown.enter)="addUser($event.target)"
        type="text">
