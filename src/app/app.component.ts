@@ -7,15 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  users$;
+
   constructor(private db: AngularFirestore) {
-    db
-      .collection('users')
-      .add({
-        name: 'Juan Herrera',
-        twitter: '@jdjuan',
-      })
-      .then(() => {
-        alert('Added successfully!');
-      });
+    this.users$ = db.collection('users').valueChanges();
+  }
+
+  addUser(name: string) {
+    this.db.collection('users').add({ name });
   }
 }
