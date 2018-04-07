@@ -1,3 +1,4 @@
+import { AngularFirestore } from 'angularfire2/firestore';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'app';
+  constructor(private db: AngularFirestore) {
+    db
+      .collection('users')
+      .add({
+        name: 'Juan Herrera',
+        twitter: '@jdjuan',
+      })
+      .then(() => {
+        alert('Added successfully!');
+      });
+  }
 }
