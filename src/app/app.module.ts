@@ -7,7 +7,11 @@ import { NgModule } from '@angular/core';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AngularFireModule.initializeApp(environment.firebase), AngularFirestoreModule],
+  imports: [
+    BrowserModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
