@@ -1,1 +1,12 @@
 <h1>HELLO ANGULAR BOSTON</h1>
+
+<div *ngFor="let message of messages$ | async">
+  <input type="text"
+         [value]="message.value"
+         (keydown.enter)="editMessage($event.target.value, message.id)">
+</div>
+
+<p></p>
+Add:
+<input type="text"
+       (keydown.enter)="addMessage($event.target)">
