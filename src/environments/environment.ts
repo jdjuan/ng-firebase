@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyAWitTfuGklTwrOWFy7t98nC6r9a5GrnVw",
-    authDomain: "angular-bolivia.firebaseapp.com",
-    databaseURL: "https://angular-bolivia.firebaseio.com",
-    projectId: "angular-bolivia",
-    storageBucket: "angular-bolivia.appspot.com",
-    messagingSenderId: "857362421878"
-  }
+    apiKey: 'AIzaSyAWitTfuGklTwrOWFy7t98nC6r9a5GrnVw',
+    authDomain: 'angular-bolivia.firebaseapp.com',
+    databaseURL: 'https://angular-bolivia.firebaseio.com',
+    projectId: 'angular-bolivia',
+    storageBucket: 'angular-bolivia.appspot.com',
+    messagingSenderId: '857362421878',
+  },
 };
